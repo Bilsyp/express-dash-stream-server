@@ -50,6 +50,15 @@ app.get("/stream/:quality/:segment", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+app.get("/stream/ping", (req, res) => {
+  res.status(200).json({
+   status: 200,
+   headers: {
+     "Cache-Control": "no-store",
+   },
+ });
+});
+
 server.listen(3000, () => {
   console.log("server is running on port 3000");
 });
