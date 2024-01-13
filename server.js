@@ -4,10 +4,12 @@ import { readFile } from "node:fs";
 import { promises as fsPromises } from "node:fs";
 import path from "node:path";
 import http from "node:http";
+import compression from "compression";
 
 const app = express();
 const server = http.createServer(app);
 app.use(cors());
+app.use(compression());
 
 //  todo playlist.mpd sebagai inisiasi awal pada player
 
@@ -52,11 +54,11 @@ app.get("/stream/:quality/:segment", async (req, res) => {
 });
 app.get("/stream/ping", (req, res) => {
   res.status(200).json({
-   status: 200,
-   headers: {
-     "Cache-Control": "no-store",
-   },
- });
+    status: 200,
+    headers: {
+      "Cache-Control": "max-age=3600", // Caching selama 1 jam
+    },
+  });
 });
 
 server.listen(3000, () => {

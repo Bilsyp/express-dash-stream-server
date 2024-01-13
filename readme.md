@@ -4,13 +4,13 @@ This repository contains a simple Node.js server using Express to handle MPEG-DA
 
 ### Installation
 
-#### 1. Clone the repository ':'
+#### 1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/your-repo.git
 ```
 
-#### 2. Install dependencies ':'
+#### 2. Install dependencies
 
 ```bash
 npm install
@@ -24,13 +24,13 @@ npm run dev
 
 ### Endpoints
 
-### 1. DASH Manifest ':'
+### 1. DASH Manifest
 
 - **Endpoint** : /stream/playlist.mpd
 - **Description** : Serves the DASH manifest for initializing the player.
 - **Content-Type** : application/dash+xml
 
-### 2. Video Segments ':'
+### 2. Video Segments
 
 - **Endpoint** : /stream/:quality/:segment
 - **Description** : Serves video segments based on quality and segment information.
@@ -44,5 +44,6 @@ npm run dev
 ### Dependencies
 
 - **Express**: Fast, unopinionated, minimalist web framework for Node.js.
+
 - **cors**: Middleware to enable CORS (Cross-Origin Resource Sharing).
 - **Node.js built-in modules**: fs, http, path.
