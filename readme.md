@@ -26,20 +26,21 @@ npm run dev
 
 ### 1. DASH Manifest
 
-- **Endpoint** : /stream/playlist.mpd
+- **Endpoint** : /stream/video/title/type
+- **Type**: playlist.mpd / h264.manifest.m3u8
 - **Description** : Serves the DASH manifest for initializing the player.
 - **Content-Type** : application/dash+xml
 
 ### 2. Video Segments
 
-- **Endpoint** : /stream/:quality/:segment
+- **Endpoint** : /stream/video/:title/:quality/:segment
 - **Description** : Serves video segments based on quality and segment information.
 - **Parameters** :
 
   - quality - Video quality (e.g., 720p, 1080p).
   - segment - Segment file name.
 
-- **Content-Type**: video/webm
+- **Content-Type**: video/webm / m4s
 
 ### Dependencies
 
@@ -47,3 +48,6 @@ npm run dev
 
 - **cors**: Middleware to enable CORS (Cross-Origin Resource Sharing).
 - **Node.js built-in modules**: fs, http, path.
+- **Nodemon** : Develoment
+- **apicache**: Cache
+- **compression**
